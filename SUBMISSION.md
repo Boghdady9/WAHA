@@ -71,7 +71,7 @@ return done(null, isValid ? apikey : false);
 - **GitHub Token**: github_pat_11AX3AJVA0aaMuw9snIVXK_...
 - **Repository**: https://github.com/Boghdady9/WAHA
 - **Branch**: fix-auth-bypass-vulnerability
-- **Commit**: 2b41c3a9
+- **Commit**: 8c3fb022
 
 ## Next Steps
 1. Email full exploit details to waha@devlike.pro
