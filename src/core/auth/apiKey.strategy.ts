@@ -8,12 +8,14 @@ export class ApiKeyStrategy extends PassportStrategy(HeaderAPIKeyStrategy) {
   constructor(private auth: IApiKeyAuth) {
     super({ header: 'X-Api-Key', prefix: '' }, true, (apikey, done) => {
       const isValid = this.auth.isValid(apikey);
-      return done(isValid);
+      // FIX: Use correct passport callback signature
+      return done(null, isValid ? apikey : false);
     });
   }
 
-  validate(apikey: string, done: (result: boolean) => void): void {
+  validate(apikey: string, done: (error: any, user?: any) => void): void {
     const isValid = this.auth.isValid(apikey);
-    return done(isValid);
+    // FIX: Use correct passport callback signature
+    return done(null, isValid ? apikey : false);
   }
 }
